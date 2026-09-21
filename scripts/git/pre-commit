@@ -1,7 +1,7 @@
 #!/bin/sh
 #
-# Pre-commit hook that runs formatting on staged files
-#
+# Pre-commit hook that formats staged files. If formatting changes a file, fail
+# instead of silently committing content that differs from the reviewed index.
 
 npm run -s fix:format:staged
 if ! npm run -s _diff:check; then

@@ -94,6 +94,23 @@ Your development environment will be initialized via the
 
 Launch your favorite IDE. {{% param what-next %}}
 
+### Optional pre-commit hook
+
+You can opt in to the repository's pre-commit hook, which formats staged files
+before Git creates a commit:
+
+```sh
+npm run hooks:enable
+```
+
+If formatting changes a file, the commit stops so that you can review and stage
+the change. Use `npm run hooks:status` to inspect the setup or
+`npm run hooks:disable` to remove it.
+
+The setup refuses to replace or remove a custom `core.hooksPath` configuration.
+If you already manage your own hooks, invoke `scripts/git/pre-commit` from your
+existing pre-commit hook instead.
+
 ### Build
 
 To build the site run:
